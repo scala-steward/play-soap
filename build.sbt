@@ -18,7 +18,10 @@ lazy val plugin = (project in file("sbt-plugin"))
       val () = publishLocal.value
       val () = (publishLocal in client).value
     },
-    scriptedTask := scripted.toTask("").value
+    scriptedTask := scripted.toTask("").value,
+    publishMavenStyle := false,
+    publishTo := Some(Resolver.url("typesafe-rp",
+        url(s"https://api.bintray.com/content/typesafe/for-subscribers-only/play-soap/${version.value}/AEE4D829FC38A3247F251ED25BA45ADD675D48EB/"))(Resolver.ivyStylePatterns))
   )
 
 lazy val docs = (project in file("docs"))

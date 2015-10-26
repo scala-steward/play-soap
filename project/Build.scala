@@ -17,14 +17,16 @@ object Common extends AutoPlugin {
 
   override def projectSettings = Seq(
     organization := "com.typesafe.play",
-    version := "1.0",
+    version := "1.0-bin-rp-15v09p01",
     resolvers += Resolver.typesafeRepo("releases"),
+    resolvers += "RP maven" at "https://typesafe.bintray.com/for-subscribers-only/AEE4D829FC38A3247F251ED25BA45ADD675D48EB",
+    resolvers += Resolver.url("RP ivy", url("https://typesafe.bintray.com/for-subscribers-only/AEE4D829FC38A3247F251ED25BA45ADD675D48EB/"))(Resolver.ivyStylePatterns),
     javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
   ) ++ mimaDefaultSettings
 
   object autoImport {
     val CxfVersion = "3.0.3"
-    val PlayVersion = "2.4.2"
+    val PlayVersion = "2.4.2-bin-rp-15v09p01"
   }
 }
 
