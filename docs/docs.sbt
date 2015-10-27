@@ -4,6 +4,8 @@
  * by any means without the express written permission of Typesafe, Inc.
  */
 
+scalaVersion := "2.11.7"
+
 libraryDependencies ++= Seq(
   "org.apache.commons" % "commons-io" % "1.3.2",
   "org.webjars" % "jquery" % "1.9.0",
